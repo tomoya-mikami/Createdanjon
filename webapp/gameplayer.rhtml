@@ -1,7 +1,10 @@
 <%# encoding:utf-8 %>
+<%#!/usr/bin/env ruby%>
 <%
   require 'cgi'
   require 'erb'
+  require 'rubygems'
+  require 'sqlite3'
   cgi=CGI.new
   map=Array.new(25)
 %>
@@ -44,6 +47,7 @@
   now = 0
   start =0
   goal=0
+  box=Math.sqrt(25)-1
   for l in 0..24 do
         if map[l]==98
             start=l
@@ -58,14 +62,24 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/control.js"></script>
 <script>
+    var ca;
+    var now_position;
+    var size=<%=box+1%>
     window.onload=function(){
-        var ca=document.getElementById("chara");
+        ca=document.getElementById("chara");
         console.log(ca);
+        now_position = <%=start%>
+        init(now_position,ca);
     };
     var i =0;
     var j_map=[];
+    <%for l in 0..24 do%>
+        j_map.push(<%=map[l]%>)
+    <% end %>
     console.log(j_map)
+
 </script>
 </head>
 <body>
@@ -86,7 +100,7 @@
                 <%end%>
                 <%
                     count=count+1
-                    if count>4 then
+                    if count>box then
                     count=0
                 %>
                 </tr>

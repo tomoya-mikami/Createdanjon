@@ -1,0 +1,31 @@
+<%# encoding:utf-8 %>
+<%#!/usr/bin/env ruby%>
+<%
+    require 'cgi' 
+    require 'erb'
+    require 'sqlite3'
+    cgi=CGI.new
+    begin
+    db = SQLite3::Database.new("gamedatabase.db")
+    rescue => ex
+        puts "page error"
+    end
+%>
+<!DOCUTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>ステージセレクト</h1>
+    <%
+        db.transaction do
+            db.execute('select * from map')do |row|
+    %>
+    <a href="gameplayer.rhtml?id="<%=row['id']%>><%=row['name']%></a>
+    <%
+            end
+        end
+        db.close
+    %>
+</body> 
+</html>
