@@ -1,0 +1,16 @@
+/usr/local/rvm/rubies/ruby-2.1.8/bin/ruby -r ./siteconf20161202-13743-rmf950.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+make: 警告: ファイル `Makefile' の修正時刻が 0.21 秒分未来の時刻です
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR="
+make: 警告: ファイル `Makefile' の修正時刻が 0.2 秒分未来の時刻です
+make: `all' に対して行うべき事はありません.
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR=" install
+make: 警告: ファイル `Makefile' の修正時刻が 0.19 秒分未来の時刻です
+installing default libraries
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.

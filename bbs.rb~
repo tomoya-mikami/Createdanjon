@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+require "cgi"
+cgi=CGI.new
+data=open("bbsdata.txt","r:utf-8")
+message=CGI.escapeHTML(data.read)
+data.close
+print cgi.header("text/html; charset=utf-8")
+print <<-EOF
+<html>
+<head>
+<script type="text/javascript">
+  function pre_check(){
+    console.log("afaafs");
+    mess=document.getElementsByTagName('message');
+    name=document.getElementsByTagName('name');
+    var ret=true;
+    if(mess=="" || name==""){
+      alert("名前と本文を入力して下さい");
+      ret=false;
+    }
+    return ret;
+  }
+</script>
+</head>
+<body>
+  <h1>1行掲示板</h1>
+  <p>メッセージをどうぞ</p>
+  <form action="update.rb" method="post" onsubmit="return pre_check()">
+  メッセージ: <input type="text" name="message">
+  お名前: <input type="text" name="name"></br>
+  <input type="submit" value="送信">
+  <input type="reset" value="クリア">
+  </br>
+  </form>
+  <p>-----------------------------------</p>
+  <pre>
+  #{message}
+  </pre>
+</body>
+</html>
+EOF

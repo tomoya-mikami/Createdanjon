@@ -1,0 +1,196 @@
+/usr/local/rvm/rubies/ruby-2.1.8/bin/ruby -r ./siteconf20161202-13743-vbjeky.rb extconf.rb
+checking if the C compiler accepts ... yes
+Building nokogiri using packaged libraries.
+Using mini_portile version 2.1.0
+checking for gzdopen() in -lz... yes
+checking for iconv... yes
+************************************************************************
+IMPORTANT NOTICE:
+
+Building Nokogiri with a packaged version of libxml2-2.9.4.
+
+Team Nokogiri will keep on doing their best to provide security
+updates in a timely manner, but if this is a concern for you and want
+to use the system library instead; abort this installation process and
+reinstall nokogiri as follows:
+
+    gem install nokogiri -- --use-system-libraries
+        [--with-xml2-config=/path/to/xml2-config]
+        [--with-xslt-config=/path/to/xslt-config]
+
+If you are using Bundler, tell it to use the option:
+
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+
+Note, however, that nokogiri is not fully compatible with arbitrary
+versions of libxml2 provided by OS/package vendors.
+************************************************************************
+Extracting libxml2-2.9.4.tar.gz into tmp/x86_64-pc-linux-gnu/ports/libxml2/2.9.4... OK
+Running 'configure' for libxml2 2.9.4... OK
+Running 'compile' for libxml2 2.9.4... OK
+Running 'install' for libxml2 2.9.4... OK
+Activating libxml2 2.9.4 (from /home/s1511461/www_local/wp/bookmarks/vender/bundle/ruby/2.1.0/gems/nokogiri-1.6.8.1/ports/x86_64-pc-linux-gnu/libxml2/2.9.4)...
+************************************************************************
+IMPORTANT NOTICE:
+
+Building Nokogiri with a packaged version of libxslt-1.1.29.
+
+Team Nokogiri will keep on doing their best to provide security
+updates in a timely manner, but if this is a concern for you and want
+to use the system library instead; abort this installation process and
+reinstall nokogiri as follows:
+
+    gem install nokogiri -- --use-system-libraries
+        [--with-xml2-config=/path/to/xml2-config]
+        [--with-xslt-config=/path/to/xslt-config]
+
+If you are using Bundler, tell it to use the option:
+
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+************************************************************************
+Extracting libxslt-1.1.29.tar.gz into tmp/x86_64-pc-linux-gnu/ports/libxslt/1.1.29... OK
+Running 'configure' for libxslt 1.1.29... OK
+Running 'compile' for libxslt 1.1.29... OK
+Running 'install' for libxslt 1.1.29... OK
+Activating libxslt 1.1.29 (from /home/s1511461/www_local/wp/bookmarks/vender/bundle/ruby/2.1.0/gems/nokogiri-1.6.8.1/ports/x86_64-pc-linux-gnu/libxslt/1.1.29)...
+checking for main() in -llzma... no
+checking for xmlParseDoc() in libxml/parser.h... yes
+checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
+checking for exsltFuncRegister() in libexslt/exslt.h... yes
+checking for xmlHasFeature()... yes
+checking for xmlFirstElementChild()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetValidStructuredErrors()... yes
+checking for xmlSchemaSetValidStructuredErrors()... yes
+checking for xmlSchemaSetParserStructuredErrors()... yes
+creating Makefile
+
+make "DESTDIR=" clean
+make: 警告: ファイル `Makefile' の修正時刻が 0.19 秒分未来の時刻です
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR="
+make: 警告: ファイル `Makefile' の修正時刻が 0.18 秒分未来の時刻です
+compiling xml_namespace.c
+xml_namespace.c: 関数 ‘dealloc_namespace’ 内:
+xml_namespace.c:17:13: 警告: cast discards ‘__attribute__((const))’ qualifier from pointer target type [-Wcast-qual]
+xml_namespace.c:20:13: 警告: cast discards ‘__attribute__((const))’ qualifier from pointer target type [-Wcast-qual]
+xml_namespace.c: 関数 ‘part_of_an_xpath_node_set_eh’ 内:
+xml_namespace.c:67:3: 警告: 互換性のないポインタ型から 1 番目の ‘Nokogiri_namespace_eh’ の引数に渡しています [デフォルトで有効]
+xml_namespace.c:27:5: 備考: expected ‘xmlNodePtr’ but argument is of type ‘struct _xmlNs *’
+compiling xml_sax_push_parser.c
+compiling xml_relax_ng.c
+compiling xml_node_set.c
+compiling xml_libxml2_hacks.c
+compiling xml_schema.c
+compiling xml_io.c
+compiling html_document.c
+compiling xml_syntax_error.c
+compiling xml_comment.c
+compiling xml_element_decl.c
+compiling xml_processing_instruction.c
+compiling xml_dtd.c
+compiling xml_entity_decl.c
+compiling xml_encoding_handler.c
+compiling nokogiri.c
+compiling html_sax_push_parser.c
+compiling xml_entity_reference.c
+compiling xml_document.c
+xml_document.c: 関数 ‘set_encoding’ 内:
+xml_document.c:182:12: 警告: cast discards ‘__attribute__((const))’ qualifier from pointer target type [-Wcast-qual]
+xml_document.c: 関数 ‘canonicalize’ 内:
+xml_document.c:535:15: 警告: cast discards ‘__attribute__((const))’ qualifier from pointer target type [-Wcast-qual]
+compiling html_element_description.c
+html_element_description.c: 関数 ‘get_description’ 内:
+html_element_description.c:252:10: 警告: cast discards ‘__attribute__((const))’ qualifier from pointer target type [-Wcast-qual]
+compiling xslt_stylesheet.c
+compiling xml_attribute_decl.c
+compiling xml_document_fragment.c
+compiling xml_sax_parser.c
+xml_sax_parser.c: 関数 ‘start_document’ 内:
+xml_sax_parser.c:28:7: 警告: ISO C90 は宣言とコードの混合を禁止しています [-Wdeclaration-after-statement]
+compiling html_entity_lookup.c
+compiling html_sax_parser_context.c
+compiling xml_xpath_context.c
+compiling xml_sax_parser_context.c
+compiling xml_attr.c
+compiling xml_node.c
+xml_node.c: 関数 ‘reparent_node_with’ 内:
+xml_node.c:170:7: 警告: 列挙値 ‘XML_ATTRIBUTE_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_ENTITY_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_DOCUMENT_FRAG_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_NOTATION_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_HTML_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_DTD_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_ELEMENT_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_ATTRIBUTE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_ENTITY_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_NAMESPACE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_XINCLUDE_START’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_XINCLUDE_END’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:170:7: 警告: 列挙値 ‘XML_DOCB_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_ATTRIBUTE_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_ENTITY_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_DOCUMENT_TYPE_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_DOCUMENT_FRAG_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_NOTATION_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_HTML_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_DTD_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_ELEMENT_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_ATTRIBUTE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_ENTITY_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_NAMESPACE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_XINCLUDE_START’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_XINCLUDE_END’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:188:7: 警告: 列挙値 ‘XML_DOCB_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_ELEMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_ATTRIBUTE_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_CDATA_SECTION_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_ENTITY_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_PI_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_COMMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_DOCUMENT_TYPE_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_DOCUMENT_FRAG_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_NOTATION_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_HTML_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_DTD_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_ELEMENT_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_ATTRIBUTE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_ENTITY_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_NAMESPACE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_XINCLUDE_START’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_XINCLUDE_END’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:199:7: 警告: 列挙値 ‘XML_DOCB_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_CDATA_SECTION_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_ENTITY_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_PI_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_COMMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_DOCUMENT_TYPE_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_NOTATION_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_DTD_NODE’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_ELEMENT_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_ATTRIBUTE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_ENTITY_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_NAMESPACE_DECL’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_XINCLUDE_START’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_XINCLUDE_END’ は switch 内で取り扱われません [-Wswitch]
+xml_node.c:167:5: 警告: 列挙値 ‘XML_DOCB_DOCUMENT_NODE’ は switch 内で取り扱われません [-Wswitch]
+compiling xml_cdata.c
+compiling xml_element_content.c
+compiling xml_text.c
+compiling xml_reader.c
+linking shared-object nokogiri/nokogiri.so
+Cleaning files only used during build.
+rm -rf /home/s1511461/www_local/wp/bookmarks/vender/bundle/ruby/2.1.0/gems/nokogiri-1.6.8.1/ext/nokogiri/tmp/x86_64-pc-linux-gnu/ports
+rm -rf /home/s1511461/www_local/wp/bookmarks/vender/bundle/ruby/2.1.0/gems/nokogiri-1.6.8.1/ports
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 nokogiri.so ./.gem.20161202-13743-j8ege9/nokogiri
+installing default nokogiri libraries

@@ -1,0 +1,24 @@
+#map{
+    width: 100px;
+    height: 100px;
+}
+#gamemain{
+    position: relative;
+}
+#gamebord{
+    position: absolute;
+    z-index: 1;
+}
+#chara{
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+}
+table{
+    border-collapse: collapse;
+    position: absolute;
+    z-index: 1;
+    width: 500px;
+    height: 500px;
+}

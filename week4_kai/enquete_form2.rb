@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+# encording: utf-8
+require "cgi"
+require "sqlite3"
+cgi=CGI.new
+print cgi.header("text/html;charset=utf-8")
+id=1;
+title=""
+h=Hash.new(0)
+
+print <<EOF
+<!DOCTYPE html>
+<html>
+<body>
+EOF
+
+#sql読み込み時の例外処理
+begin
+db=SQLite3::Database.new("report1102.db")
+rescue => ex
+print <<EOF
+読み込みに失敗しました。お手数ですがもう一度ページを読み込むか時間を開けてアクセスして下さい
+</body>
+</html>
+EOF
+#さすがにerror_log.txtの判定をすると無限ループになるからやらない
+io_log=open("error_log.txt","a:utf-8")
+io_log.write("#{ex}\n")
+io_log.close
+exit
+end
+
+#タイトルの読み込み
+db.transaction(){
+  db.execute("SELECT question from question where id=#{id};"){|row|
+    title=row[0]
+  }
+  db.execute("SELECT choice.choice_content from choice where choice.question_id=#{id};"){|row|
+    h[row[0]]=row[0];
+  }
+}
+
+#body生成
+print <<EOF
+<h1>投票システム</h1>
+<h2>#{title}</h2>
+<form method="post" action="vote2.rb">
+EOF
+
+h.each{|key,value|
+  print <<EOF
+<input type="checkbox" name="vote" value=#{key}>#{value}</br>
+EOF
+}
+print <<EOF
+<br>
+<input type="submit" value="送信">
+<input type="reset" value="クリア"><br><br>
+</form>
+<a href="view_result2.rb">投票結果はこちら</a>
+</body>
+</html>
+EOF

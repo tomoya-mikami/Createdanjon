@@ -1,0 +1,18 @@
+/usr/local/rvm/rubies/ruby-2.1.8/bin/ruby -r ./siteconf20161202-13743-1a7i2hx.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+make: 警告: ファイル `Makefile' の修正時刻が 0.21 秒分未来の時刻です
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR="
+make: 警告: ファイル `Makefile' の修正時刻が 0.2 秒分未来の時刻です
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR=" install
+make: 警告: ファイル `Makefile' の修正時刻が 0.029 秒分未来の時刻です
+/usr/bin/install -m 0755 debug_inspector.so ./.gem.20161202-13743-2p5hoh
+installing default debug_inspector libraries
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.

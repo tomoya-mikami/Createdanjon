@@ -1,0 +1,62 @@
+<%# encoding: utf-8 %>
+<%
+    require 'cgi'
+    cgi=CGI.new
+    cookies=cgi.cookies
+    player=cgi["judge"]
+    player=player.to_i
+    enemy=rand(100)%3
+    enemy_mark="a"
+    player_mark="b"
+    text="c"
+    win=(cookies['win'][0]||0).to_i
+    lose=(cookies['lose'][0]||0).to_i
+    even=(cookies['even'][0]||0).to_i
+
+    judge=player-enemy
+    case judge
+    when -2,1 then
+      text="まけ"
+      lose+=1
+    when 0 then
+      text="引き分け"
+      even+=1
+    when 2,-1 then
+      text="勝ち"
+      win+=1
+    end
+
+    cookie_win=CGI::Cookie.new("name"=>"win","value"=>win.to_s)
+    cookie_lose=CGI::Cookie.new("name"=>"lose","value"=>lose.to_s)
+    cookie_even=CGI::Cookie.new("name"=>"even","value"=>even.to_s)
+
+    def mark_set(x)
+    	case x
+	when 0 then
+	  return "グー"
+	when 1 then
+	  return "チョキ"
+	when 2 then
+	  return "パー"
+	end
+    end
+    
+    enemy_mark=mark_set(enemy)
+    player_mark=mark_set(player)
+    
+    print cgi.header("type"=>"text/html","charset"=>"utf-8","cookie"=>[cookie_win,cookie_lose,cookie_even])
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>勝負！</h1>
+    あなた : <%=player_mark%><br>
+    コンピュータ : <%=enemy_mark%><br><br>
+    <%=text%>
+    現在の勝敗 : <%=win%>勝<%=lose%>敗<%=even%>引き分け
+    <a href="janken_cookie.rhtml">もう一度勝負する</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/usr/local/rvm/rubies/ruby-2.1.8/bin/ruby -r ./siteconf20161202-13743-1oc5u2e.rb extconf.rb
+checking for main() in -lpthread... yes
+creating Makefile
+
+make "DESTDIR=" clean
+make: 警告: ファイル `Makefile' の修正時刻が 0.2 秒分未来の時刻です
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR="
+make: 警告: ファイル `Makefile' の修正時刻が 0.19 秒分未来の時刻です
+compiling function.cc
+compiling trycatch.cc
+compiling backref.cc
+compiling rr.cc
+compiling template.cc
+compiling context.cc
+compiling invocation.cc
+compiling value.cc
+compiling date.cc
+compiling handles.cc
+compiling external.cc
+compiling gc.cc
+compiling locker.cc
+compiling init.cc
+compiling accessor.cc
+compiling object.cc
+compiling heap.cc
+compiling message.cc
+compiling array.cc
+compiling stack.cc
+compiling script.cc
+compiling exception.cc
+compiling string.cc
+compiling signature.cc
+compiling constraints.cc
+compiling constants.cc
+compiling v8.cc
+compiling primitive.cc
+linking shared-object v8/init.so
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.
+
+make "DESTDIR=" install
+make: 警告: ファイル `init.so' の修正時刻が 0.2 秒分未来の時刻です
+/usr/bin/install -m 0755 init.so ./.gem.20161202-13743-3bv5jz/v8
+installing default init libraries
+make: 警告:  時刻のずれを検出. 不完全なビルド結果になるかもしれません.

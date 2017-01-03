@@ -1,0 +1,106 @@
+<%# encoding:utf-8 %>
+<%
+  require 'cgi'
+  require 'erb'
+  cgi=CGI.new
+  map=Array.new(25)
+%>
+  <%#
+  for l in 0..24 do
+    if (l/5)%2==1 then
+        map[l]=0
+    else
+        map[l]=1
+    end
+  end
+  %>
+<%
+  map[0]=98
+  map[1]=0
+  map[2]=0
+  map[3]=1
+  map[4]=1
+  map[5]=1
+  map[6]=1
+  map[7]=0
+  map[8]=1
+  map[9]=1
+  map[10]=1
+  map[11]=1
+  map[12]=0
+  map[13]=1
+  map[14]=1
+  map[15]=1
+  map[16]=1
+  map[17]=0
+  map[18]=1
+  map[19]=1
+  map[20]=1
+  map[21]=1
+  map[22]=0
+  map[23]=0
+  map[24]=99
+  count = 0
+  now = 0
+  start =0
+  goal=0
+  for l in 0..24 do
+        if map[l]==98
+            start=l
+        elsif map[l]==99
+            goal=l
+        end
+    end
+  print cgi.header("text/html;charset=utf-8")
+  name = "テストプレイヤー"
+%>
+<!DOCUTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script>
+    window.onload=function(){
+        var ca=document.getElementById("chara");
+        console.log(ca);
+    };
+    var i =0;
+    var j_map=[];
+    console.log(j_map)
+</script>
+</head>
+<body>
+    <h1><%=name%></h1>
+    <div id="gamemain">
+        <div id="gamebord">
+            <table>
+            <tr>
+            <% map.each do |num|%>
+                <% if num == 0 then%>
+                    <td  class="map"><img src="img/stage1.png"></td>
+                <% elsif num == 1 then%>
+                    <td  class="map"><img src="img/stage2.png"></td>
+                <% elsif num == 98 then%>
+                    <td  class="map"><img src="img/stage98.png"></td>
+                <% elsif num == 99 then%>
+                    <td  class="map"><img src="img/stage99.png"></td>
+                <%end%>
+                <%
+                    count=count+1
+                    if count>4 then
+                    count=0
+                %>
+                </tr>
+                    <%
+                        if (now/5)!=4 then
+                    %>
+                    <tr>
+                    <%end%>
+                <%end%>
+                <%now=now+1%>
+            <%end%>
+            </table>
+        </div>
+        <div id="chara"><img src="img/gamechara.png" width="100px" height="100px"></div>
+    </div>
+</body> 
+</html>

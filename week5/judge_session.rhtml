@@ -1,0 +1,61 @@
+<%# encoding: utf-8 %>
+<%
+    require 'cgi'
+    require 'cgi/session'
+    cgi=CGI.new
+    session=CGI::Session.new(cgi)
+    player=cgi["judge"]
+    player=player.to_i
+    enemy=rand(100)%3
+    enemy_mark="a"
+    player_mark="b"
+    text="c"
+
+    judge=player-enemy
+    case judge
+    when -2,1 then
+      text="まけ"
+      session['lose']=(session['lose']||0).to_i+1
+    when 0 then
+      text="引き分け"
+      session['even']=(session['even']||0).to_i+1
+    when 2,-1 then
+      text="勝ち"
+      session['win']=(session['win']||0).to_i+1
+    end
+
+    win=(session['win']||0).to_i
+    lose=(session['lose']||0).to_i
+    even=(session['even']||0).to_i
+
+    def mark_set(x)
+    	case x
+	when 0 then
+	  return "グー"
+	when 1 then
+	  return "チョキ"
+	when 2 then
+	  return "パー"
+	end
+    end
+    
+    enemy_mark=mark_set(enemy)
+    player_mark=mark_set(player)
+
+    print cgi.header("text/html;chrset=utf-8")	
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>勝負！</h1>
+    あなた : <%=player_mark%><br>
+    コンピュータ : <%=enemy_mark%><br><br>
+    <%=text%>
+    現在の勝敗 : <%=win%>勝<%=lose%>敗<%=even%>引き分け
+    <a href="janken_session.rhtml">もう一度勝負する</a>
+</body>
+</html>
+<% session.close %>
