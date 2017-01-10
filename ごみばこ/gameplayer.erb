@@ -1,0 +1,26 @@
+<%# encoding:utf-8 %>
+<%
+  require 'cgi'
+  cgi=CGI.new
+  cookies = cgi.cookies
+  win=(cookies['win'][0]||0).to_i
+  lose=(cookies['lose'][0]||0).to_i
+  even=(cookies['even'][0]||0).to_i
+  print cgi.header("text/html;charset=utf-8")
+%>
+<!DOCUTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>じゃんけん</h1>
+    現在の勝敗:<%=win%>勝 <%=lose%>敗 <%=even%>引き分け<br><br>
+    今度の手は?:
+    <form method="post" action="judge_cookie.rhtml">
+    <input type="radio" name="judge" value="0">グー 
+    <input type="radio" name="judge" value="1">チョキ
+    <input type="radio" name="judge" value="2">パー
+    <input type="submit" value=勝負!>
+    </form>
+</body> 
+</html>
