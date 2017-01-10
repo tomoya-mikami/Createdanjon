@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # encording: utf-8
 require "cgi"
+require "cgi/session"
 require "sqlite3"
 cgi=CGI.new
 print cgi.header("text/html;charset=utf-8")
@@ -10,7 +11,9 @@ begin
 rescue => ex
     puts "page error"
 end
-id=cgi["id"]
+session = CGI::Session.new(cgi)
+id=(session['num']||0).to_i
+name=(session['name']||0)
 map=Array.new(25)
 i=0;
 db.transaction(){
@@ -32,7 +35,6 @@ for l in 0..24 do
         goal=l
     end
 end
-name = "テストプレイヤー"
 print <<-EOF
 <!DOCUTYPE html>
 <html>

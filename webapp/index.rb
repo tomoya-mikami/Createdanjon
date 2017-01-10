@@ -14,6 +14,7 @@ print <<-EOF
 <!DOCUTYPE html>
 <html>
 <head>
+<script src="js/init.js"></script>
 </head>
 <body>
     <h1>ステージセレクト</h1>
@@ -21,7 +22,7 @@ EOF
 db.transaction(){
   db.execute("select * from map;"){|row|
     print <<-EOF
-    <a href="playerrb.rb?id=#{row[0]}">#{row[1]}</a></br>
+    <a href="playerrb.rb" data-jump_num=#{row[0]} onclick="onLinkClick(this)">#{row[1]}</a></br>
     EOF
   }
 }

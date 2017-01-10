@@ -26,9 +26,9 @@ function doDrop(event) {
     event.preventDefault();
     var data = event.dataTransfer.getData("text/plain");
     num = Number(data);
-    ind=Number(event.target.textContent);
-    /*console.log("panelnumber: "+num);
-    console.log("index: "+ind);*/
+    ind=Number(event.target.dataset.num);
+    console.log("panelnumber: "+num);
+    console.log("index: "+ind);
     var imgadd;
     if (num == 0) {
         imgadd = 'img/stage1.png';
@@ -54,7 +54,7 @@ function doDrop(event) {
     }
     event.target.style.backgroundImage = 'url('+imgadd+')';
     create_post();
-    console.log(array);
+    /*console.log(array);*/
 }
 /*javascriptの配列のデータを強引にpostする*/
 function create_post(){
