@@ -11,6 +11,7 @@ rescue => ex
     puts "page error"
 end
 id=cgi["id"]
+name=cgi["name"]
 map=Array.new(25)
 i=0;
 db.transaction(){
@@ -32,7 +33,6 @@ for l in 0..24 do
         goal=l
     end
 end
-name = "テストプレイヤー"
 print <<-EOF
 <!DOCUTYPE html>
 <html>

@@ -21,7 +21,7 @@ EOF
 db.transaction(){
   db.execute("select * from map;"){|row|
     print <<-EOF
-    <a href="playerrb.rb?id=#{row[0]}">#{row[1]}</a></br>
+    <a href="playerrb.rb?id=#{row[0]}&name=#{row[1]}">#{row[1]}</a></br>
     EOF
   }
 }
