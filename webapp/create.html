@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/create.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/create_mode.js"></script>
+</head>
+
+<body>
+    <h1>クリエイトモード</h1>
+    <div id="main" class="container-fluid">
+        <div class="row">
+            <div id="create_view" class="col-lg-6">
+                <table border="1">
+                    <tr>
+                        <td id="p1" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">0</p></td>
+                        <td id="p2" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">1</p></td>
+                        <td id="p3" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">2</p></td>
+                        <td id="p4" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">3</p></td>
+                        <td id="p5" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">4</p></td>
+                    </tr>
+                    <tr>
+                        <td id="p6" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">5</p></td>
+                        <td id="p7" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">6</p></td>
+                        <td id="p8" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">7</p></td>
+                        <td id="p9" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">8</p></td>
+                        <td id="p10" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">9</p></td>
+                    </tr>
+                    <tr>
+                        <td id="p11" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">10</p></td>
+                        <td id="p12" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">11</p></td>
+                        <td id="p13" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">12</p></td>
+                        <td id="p14" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">13</p></td>
+                        <td id="p15" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">14</p></td>
+                    </tr>
+                    <tr>
+                        <td id="p16" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">15</p></td>
+                        <td id="p17" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">16</p></td>
+                        <td id="p18" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">17</p></td>
+                        <td id="p19" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">18</p></td>
+                        <td id="p20" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">19</p></td>
+                    </tr>
+                    <tr>
+                        <td id="p21" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">20</p></td>
+                        <td id="p22" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">21</p></td>
+                        <td id="p23" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">22</p></td>
+                        <td id="p24" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">23</p></td>
+                        <td id="p25" class="set" ondragover="doDragOver(event);" ondrop="doDrop(event);"><p class="blocktext">24</p></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="panel_view" class="col-lg-4">
+                <div draggable="true" class="pabel" ondragstart="return doDragStart1(event);">
+                    <img class="cimg" src="img/stage1.png" alt="">
+                </div>
+                <div draggable="true" class="pabel" ondragstart="return doDragStart2(event);">
+                    <img class="cimg" src="img/stage2.png" alt="">
+                </div>
+                <div draggable="true" class="pabel" ondragstart="return doDragStart98(event);">
+                    <img class="cimg" src="img/stage98.png" alt="">
+                </div>
+                <div draggable="true" class="pabel" ondragstart="return doDragStart99(event);">
+                    <img class="cimg" src="img/stage99.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>名前は最後に入力してください</div>
+    <div id="sent"></div>
+</body>
+
+</html>

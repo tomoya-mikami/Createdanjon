@@ -1,3 +1,4 @@
+/*勇者の初期位置の設定*/ 
 function init(s, id) {
     var start_y = Math.floor(s / 5);
     var start_x = Math.floor(s % 5);
@@ -6,6 +7,7 @@ function init(s, id) {
     id.style.top = 100 * start_y;
     id.style.left = 100 * start_x;
 }
+/*勇者が移動する関数*/
 function up(p, size, id) {
     if (p - size > -1) {
         if(mapevent(j_map[p-size])){
@@ -50,6 +52,7 @@ function left(p, size, id) {
     console.log("now_position " + p);
     return p;
 }
+/*クリックしたときの関数*/
 document.onkeydown = function (e) {
     var key_code = e.keyCode;
     if (key_code == 37) {
@@ -66,12 +69,14 @@ document.onkeydown = function (e) {
     }
     /*console.log(key_code);*/
 }
+/*パネルごとのイベント*/
 function mapevent(num) {
     if (num == 1) {
         return false;
     }
     return true;
 }
+/*立ち位置を更新する関数*/
 function position_update(p, id) {
     var now_y = Math.floor(p / 5);
     var now_x = Math.floor(p % 5);

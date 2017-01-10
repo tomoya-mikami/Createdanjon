@@ -1,0 +1,13 @@
+.blocktext{
+    opacity: 0;
+}
+.set{
+    background-color: white;
+    border-width: 2px;
+    width: 100px;
+    height: 100px;
+}
+img.cimg{
+    width: 100px;
+    height: auto;
+}
