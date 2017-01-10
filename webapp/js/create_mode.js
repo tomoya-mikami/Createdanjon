@@ -26,7 +26,7 @@ function doDrop(event) {
     event.preventDefault();
     var data = event.dataTransfer.getData("text/plain");
     num = Number(data);
-    ind=Number(event.target.textContent);
+    ind=Number(event.target.dataset.num);
     /*console.log("panelnumber: "+num);
     console.log("index: "+ind);*/
     var imgadd;

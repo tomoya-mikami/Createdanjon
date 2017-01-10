@@ -105,6 +105,7 @@ print <<-EOF
         </div>
         <div id="chara"><img src="img/gamechara.png" width="100px" height="100px"></div>
     </div>
+    <div id="footer"><a href="index.rb" class="text">戻る</a></div>
 </body> 
 </html>
 EOF
