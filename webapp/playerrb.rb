@@ -38,6 +38,7 @@ print <<-EOF
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/control.js"></script>
 <script>
     var ca;
@@ -63,6 +64,8 @@ console.log(j_map)
 </head>
 <body>
     <h1>#{name}</h1>
+    <h2>十字キーで動きます</h2>
+    <h3><a href="index.rb">戻る</a></h3>
     <div id="gamemain">
         <div id="gamebord">
             <table>
@@ -105,7 +108,7 @@ print <<-EOF
         </div>
         <div id="chara"><img src="img/gamechara.png" width="100px" height="100px"></div>
     </div>
-    <div id="footer"><a href="index.rb" class="text">戻る</a></div>
+    <div id="overlay"></div>
 </body> 
 </html>
 EOF

@@ -28,3 +28,13 @@ table{
 .text{
     z-index: 1;
 }
+ #overlay{
+        display: none;
+        width: 1980;
+        height:1080;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        background: rgba(0,0,0,0.7);
+    }

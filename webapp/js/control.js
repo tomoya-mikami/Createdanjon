@@ -1,4 +1,4 @@
-/*勇者の初期位置の設定*/ 
+/*勇者の初期位置の設定*/
 function init(s, id) {
     var start_y = Math.floor(s / 5);
     var start_x = Math.floor(s % 5);
@@ -10,9 +10,9 @@ function init(s, id) {
 /*勇者が移動する関数*/
 function up(p, size, id) {
     if (p - size > -1) {
-        if(mapevent(j_map[p-size])){
+        if (mapevent(j_map[p - size])) {
             p = p - size;
-            position_update(p,id);
+            position_update(p, id);
         }
     }
     console.log("up");
@@ -21,9 +21,9 @@ function up(p, size, id) {
 }
 function down(p, size, id) {
     if (p + size < size * size) {
-        if(mapevent(j_map[p+size])){
+        if (mapevent(j_map[p + size])) {
             p = p + size;
-            position_update(p,id);
+            position_update(p, id);
         }
     }
     console.log("down");
@@ -32,9 +32,9 @@ function down(p, size, id) {
 }
 function right(p, size, id) {
     if ((p % 5) != 4) {
-        if(mapevent(j_map[p+1])){
+        if (mapevent(j_map[p + 1])) {
             p = p + 1;
-            position_update(p,id);
+            position_update(p, id);
         }
     }
     console.log("right");
@@ -43,16 +43,16 @@ function right(p, size, id) {
 }
 function left(p, size, id) {
     if ((p % 5) != 0) {
-        if(mapevent(j_map[p-1])){
+        if (mapevent(j_map[p - 1])) {
             p = p - 1;
-            position_update(p,id);
+            position_update(p, id);
         }
     }
     console.log("left");
     console.log("now_position " + p);
     return p;
 }
-/*クリックしたときの関数*/
+/*キーボード押したときの関数*/
 document.onkeydown = function (e) {
     var key_code = e.keyCode;
     if (key_code == 37) {
@@ -74,6 +74,9 @@ function mapevent(num) {
     if (num == 1) {
         return false;
     }
+    if (num == 99) {
+        showoverlay();
+    }
     return true;
 }
 /*立ち位置を更新する関数*/
@@ -82,4 +85,10 @@ function position_update(p, id) {
     var now_x = Math.floor(p % 5);
     id.style.top = 100 * now_y;
     id.style.left = 100 * now_x;
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+}
+/*ゴールした時のフェードアウト・フェードイン*/
+function showoverlay() {
+    console.log("Goooool!!");
+    $("#overlay").fadeIn();
 }
